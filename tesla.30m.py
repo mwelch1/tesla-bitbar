@@ -162,7 +162,7 @@ class Connection(object):
             if check_token_age():
                 abort_credentials()
             else:
-                print '--Error contacting Tesla\'s servers'
+                print ('--Error contacting Tesla\'s servers')
         else:
             charset = resp.info().get('charset', 'utf-8')
             return json.loads(resp.read().decode(charset))
@@ -338,7 +338,7 @@ def main():
     # loop through vehicles, print menu with relevant info
     for i, vehicle in enumerate(vehicles):
         if prefix:
-            print vehicle['display_name']
+            print (vehicle['display_name'])
 
         if vehicle['state'] != "online" and vehicle['state'] != "driving":
             print ('%sState: %s| color=%s' %  (prefix, vehicle['state'], color))
